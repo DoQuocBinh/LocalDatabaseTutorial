@@ -37,12 +37,13 @@ namespace LocalDatabaseTutorial
             
         }
 
-        private void collectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+      async  private void collectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //Lay Item ma nguoi dung select
             Person selectedItem = e.CurrentSelection[0] as Person;
-            DisplayAlert("Alert", $"You have selected {selectedItem.Name}", "Ok");
-
+            //DisplayAlert("Alert", $"You have selected {selectedItem.Name}", "Ok");
+            
+            await Navigation.PushAsync(new Page1(selectedItem.Name));
         }
     }
 }

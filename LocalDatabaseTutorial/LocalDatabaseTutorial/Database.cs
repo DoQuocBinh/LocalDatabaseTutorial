@@ -23,6 +23,7 @@ namespace LocalDatabaseTutorial
         public Task<int> SavePersonAsync(Person person)
         {
             return _database.InsertAsync(person);
+           
         }
         //Lay tat ca Person trong table Person
         public  Task<List<Person>> GetPeopleAsync()
